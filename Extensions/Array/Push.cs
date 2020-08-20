@@ -2,10 +2,19 @@ namespace Extension
 {
     public static class PushExtension
     {
-        // Через силу запихиваем объект в массив
-        public static T[] Push<T>(this T[] array, params T[] obj)
+        //
+        // Summary:
+        //    Adds values ​​to the end of System.Array.
+        //
+        // Parameters:
+        //   objects:
+        //     Parameters to add to System.Array.
+        // 
+        // Returns:
+        //     System.Array with new objects.
+        public static T[] Push<T>(this T[] array, params T[] objects)
         {
-            int size = array.Length + obj.Length;
+            int size = array.Length + objects.Length;
             T[] result = new T[size];
 
             for (int i = 0, j = 0; i < size; i++)
@@ -14,7 +23,7 @@ namespace Extension
                 {
                     result[i] = array[i];
                 } else {
-                    result[i] = obj[j];
+                    result[i] = objects[j];
                     j++;
                 }
             }
