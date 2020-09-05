@@ -1,4 +1,5 @@
 using System.Linq;
+using System;
 
 namespace Extension
 {
@@ -12,7 +13,7 @@ namespace Extension
         /// <returns>Boolean result of the operation</returns>
         public static string RemoveChars(this string input, params char[] chars)
         {
-            return input.Where(c => !chars.Contains(c)).ToString();
+            return String.Concat(input.Where(c => !chars.Contains(c)));
         }
     }
 }
