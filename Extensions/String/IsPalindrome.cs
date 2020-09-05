@@ -4,14 +4,13 @@ namespace Extension
 {
     public static class IsPalindromeStringExtension
     {
-        //
-        // Summary:
-        //    Checks if a string is a palindrome.
-        //    
-        //    Level, Madam, Racecar etc.
-        //
-        // Returns:
-        //    Boolean result of the operation.
+        ///
+        /// <summary>
+        ///    Checks if a string is a palindrome.
+        ///    
+        ///    Level, Madam, Racecar etc.
+        /// </summary>
+        /// <returns>Boolean result of the operation</returns>
         public static bool IsPalindrome(this string text)
         {
             char[] chars = text.ToLower().ToCharArray();
