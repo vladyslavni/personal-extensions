@@ -1,27 +1,20 @@
 using System;
+
 namespace Extension
 {
-    public static class ExpandExtension
+    public static partial class ArrayExtension
     {
-        //
-        // Summary:
-        //    Increases the size of the System.Array.
-        //
-        // Parameters:
-        //   size:
-        //     A 32-bit integer representing the length by which System.Array will be extended.
-        //
-        // Returns:
-        //     Extended System.Array.
-        //
-        // Exceptions:
-        //   T:System.ArgumentException:
-        //     Array expansion size is zero or less.
+        /// <summary>
+        ///     Increases the size of the array.
+        /// </summary>
+        /// <param name="size">A 32-bit integer representing the length by which array will be extended.</param>
+        /// <returns>Extended array.</returns>
+        /// <exception cref="System.ArgumentException">Array expansion size is zero or less.</exception>
         public static T[] Expand<T>(this T[] array, int size)
         {
-            if ( 0 > size ) throw new ArgumentException("Array expansion size is zero or less."); 
+            if ( 0 >= size ) throw new ArgumentException("Array expansion size is zero or less."); 
 
-            T[] result = new T[size];
+            T[] result = new T[array.Length + size];
 
             for (int i = 0; i < array.Length; i++)
             {
