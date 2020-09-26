@@ -1,17 +1,12 @@
 namespace Extension
 {
-    public static class PushExtension
+    public static partial class ArrayExtension
     {
-        //
-        // Summary:
-        //    Adds values ​​to the end of System.Array.
-        //
-        // Parameters:
-        //   objects:
-        //     Parameters to add to System.Array.
-        // 
-        // Returns:
-        //     System.Array with new objects.
+        /// <summary>
+        ///     Adds values ​​to the end of the array.
+        /// </summary>
+        /// <param name="objects">Elements to be added to the end of the array.</param>
+        /// <returns>Extended System.Array.</returns>
         public static T[] Push<T>(this T[] array, params T[] objects)
         {
             int size = array.Length + objects.Length;
