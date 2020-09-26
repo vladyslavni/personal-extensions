@@ -2,17 +2,20 @@ using System;
 
 namespace Extension
 {
-    public static class IsEmptyExtension
+    public static partial class ArrayExtension
     {
-        //
-        // Summary:
-        //    Checks if System.Array is empty.
-        //
-        // Returns:
-        //    Boolean result of the operation.
+        /// <summary>
+        ///     Checks if array is empty.
+        /// </summary>
+        /// <returns>Boolean result of the operation.</returns>
         public static bool IsEmpty<T>(this T[] array)
         {
-            return array != null && array.Length < 1;
+            foreach (var item in array)
+            {
+                if (item.IsNotNull()) return false;
+            }
+
+            return true;
         }
     }
 }
